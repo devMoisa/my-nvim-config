@@ -5,8 +5,24 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
-   },
-   config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', {}) 
-   end
+    },
+    config = function()
+        -- Configuração do Neo-tree
+        require("neo-tree").setup({
+            window = {
+                mappings = {
+                    ["l"] = "open",        -- Usar 'L' para abrir a pasta
+                    ["h"] = "close_node",  -- Usar 'H' para fechar a pasta
+                    ["j"] = "next_sibling",-- Usar 'j' para mover para baixo
+                    ["k"] = "prev_sibling" -- Usar 'k' para mover para cima
+                }
+            }
+        })
+
+        -- Mapeamento da tecla <leader>e para alternar o Neo-tree
+        vim.keymap.set('n', '<leader>e', function()
+            require('neo-tree.command').execute({ toggle = true, dir = vim.loop.cwd() })
+        end, {})
+    end
 }
+
