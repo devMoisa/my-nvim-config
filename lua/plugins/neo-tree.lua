@@ -23,6 +23,10 @@ return {
         vim.keymap.set('n', '<leader>e', function()
             require('neo-tree.command').execute({ toggle = true, dir = vim.loop.cwd() })
         end, {})
+
+        -- Mapeamento das teclas Ctrl+h e Ctrl+l para navegação entre janelas
+        vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+        vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
     end
 }
 
