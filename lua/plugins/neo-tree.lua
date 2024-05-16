@@ -10,6 +10,7 @@ return {
 		-- Configuração do Neo-tree
 		require("neo-tree").setup({
 			window = {
+				width = 60,
 				mappings = {
 					["l"] = "open", -- Usar 'L' para abrir a pasta
 					["h"] = "close_node", -- Usar 'H' para fechar a pasta
@@ -33,8 +34,8 @@ return {
 			require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
 		end, {})
 
-		-- Mapeamento das teclas Ctrl+h e Ctrl+l para navegação entre janelas
-		vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
-		vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+		-- Mapeamentos adicionais para navegação entre janelas usando Alt+Seta
+		vim.keymap.set("n", "<A-Left>", "<C-w>h", { noremap = true, silent = true })
+		vim.keymap.set("n", "<A-Right>", "<C-w>l", { noremap = true, silent = true })
 	end,
 }
