@@ -1,3 +1,3 @@
 return {
-          'mattkubej/jest.nvim'
+	"mattkubej/jest.nvim",
 }

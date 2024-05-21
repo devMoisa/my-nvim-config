@@ -10,7 +10,7 @@ return {
 		-- Configuração do Neo-tree
 		require("neo-tree").setup({
 			window = {
-				width = 60,
+				width = 40,
 				mappings = {
 					["l"] = "open", -- Usar 'L' para abrir a pasta
 					["h"] = "close_node", -- Usar 'H' para fechar a pasta

@@ -1,3 +1,3 @@
 return {
-  'AndrewRadev/tagalong.vim'
+	"AndrewRadev/tagalong.vim",
 }

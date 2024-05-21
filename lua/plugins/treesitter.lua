@@ -5,10 +5,21 @@ return {
 		config = function()
 			local config = require("nvim-treesitter.configs")
 			config.setup({
-				ensure_installed = { "lua", "javascript", "typescript", "go", "html" },
-				highlight = { enable = true },
-				indent = { enable = true },
-				autotag = { enable = true },
+				ensure_installed = {
+					"html",
+          "typescript",
+          "javascript",
+          "tsx",
+				},
+				highlight = {
+					enable = true,
+				},
+				indent = {
+					enable = true,
+				},
+				autotag = {
+					enable = true,
+				},
 				rainbow = {
 					enable = true,
 					extended_mode = true,
@@ -20,5 +31,12 @@ return {
 	{
 		"p00f/nvim-ts-rainbow",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
 	},
 }
